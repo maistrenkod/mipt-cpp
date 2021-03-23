@@ -1,0 +1,41 @@
+﻿  Source.cpp
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(77,1): warning C4812:  устаревший стиль объявления: используйте "Vector2D<T,n>::Vector2D" как альтернативу
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(86,1): warning C4812:  устаревший стиль объявления: используйте "Vector2D<T,n>::Vector2D" как альтернативу
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(86,1): warning C4812:  устаревший стиль объявления: используйте "Vector2D<int,5>::Vector2D" как альтернативу
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :  во время компиляции функции-члена класс шаблон "Vector2D<int,5>::Vector2D(T)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :         with
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :         [
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :             T=int
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :         ]
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :  выполняется компиляция ссылки на экземпляр шаблон функции "Vector2D<int,5>::Vector2D(T)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :         with
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :         [
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :             T=int
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :         ]
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :  выполняется компиляция ссылки на экземпляр класс шаблон функции "Vector2D<int,5>"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(150,9): warning C4244:  return: преобразование "double" в "T1", возможна потеря данных
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(150,9): warning C4244:         with
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(150,9): warning C4244:         [
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(150,9): warning C4244:             T1=int
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(150,9): warning C4244:         ]
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(12): message :  выполняется компиляция ссылки на экземпляр шаблон функции "T1 operator *<int,5>(const Vector2D<int,5> &,const Vector2D<int,5> &)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(12): message :         with
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(12): message :         [
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(12): message :             T1=int
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(12): message :         ]
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(281,13): warning C4101:  a: неиспользованная локальная переменная
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(23): message :  выполняется компиляция ссылки на экземпляр шаблон функции "Matrix<int,3,3> operator *<int,3,3>(const Matrix<int,3,3> &,const Matrix<int,3,3> &)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(77,1): warning C4812:  устаревший стиль объявления: используйте "Vector2D<int,5>::Vector2D" как альтернативу
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(78): message :  во время компиляции функции-члена класс шаблон "Vector2D<int,5>::Vector2D(void)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(123): message :  выполняется компиляция ссылки на экземпляр шаблон функции "Vector2D<int,5>::Vector2D(void)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :  во время компиляции функции-члена класс шаблон "Vector2D<int,5>::Vector2D(T)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :         with
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :         [
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :             T=int
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Header.h(87): message :         ]
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :  выполняется компиляция ссылки на экземпляр шаблон функции "Vector2D<int,5>::Vector2D(T)"
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :         with
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :         [
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :             T=int
+C:\Users\Асус\source\repos\n_merVector\n_merVector\Source.cpp(7): message :         ]
+  n_merVector.vcxproj -> C:\Users\Асус\source\repos\n_merVector\Debug\n_merVector.exe
