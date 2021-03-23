@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\Асус\source\repos\vectorandmatrix(contaners)\vectorandmatrix(contaners)\Header.h(76,1): warning C4812:  устаревший стиль объявления: используйте "Vector2D<T,n>::Vector2D" как альтернативу
+C:\Users\Асус\source\repos\vectorandmatrix(contaners)\vectorandmatrix(contaners)\Header.h(85,1): warning C4812:  устаревший стиль объявления: используйте "Vector2D<T,n>::Vector2D" как альтернативу
+C:\Users\Асус\source\repos\vectorandmatrix(contaners)\vectorandmatrix(contaners)\Header.h(280,13): warning C4101:  a: неиспользованная локальная переменная
+C:\Users\Асус\source\repos\vectorandmatrix(contaners)\vectorandmatrix(contaners)\Source.cpp(23): message :  выполняется компиляция ссылки на экземпляр шаблон функции "Matrix<int,3,3> operator *<int,3,3>(const Matrix<int,3,3> &,const Matrix<int,3,3> &)"
+  vectorandmatrix(contaners).vcxproj -> C:\Users\Асус\source\repos\vectorandmatrix(contaners)\Debug\vectorandmatrix(contaners).exe
