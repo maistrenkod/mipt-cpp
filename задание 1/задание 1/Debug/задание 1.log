@@ -1,0 +1,29 @@
+﻿  Source.cpp
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(214,21): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(211): message :  во время компиляции функции-члена класс шаблон "Lessontime<int>::Lessontime(T,std::vector<std::string,std::allocator<_Ty>>)"
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(211): message :         with
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(211): message :         [
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(211): message :             T=int,
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(211): message :             _Ty=std::string
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(211): message :         ]
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(30): message :  выполняется компиляция ссылки на экземпляр шаблон функции "Lessontime<int>::Lessontime(T,std::vector<std::string,std::allocator<_Ty>>)"
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(30): message :         with
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(30): message :         [
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(30): message :             T=int,
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(30): message :             _Ty=std::string
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(30): message :         ]
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(24): message :  выполняется компиляция ссылки на экземпляр класс шаблон функции "Lessontime<int>"
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(219,26): warning C4101:  a: неиспользованная локальная переменная
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(239,21): warning C4018:  <: несоответствие типов со знаком и без знака
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(236): message :  во время компиляции функции-члена класс шаблон "void Lessontime<int>::set_name(std::vector<std::string,std::allocator<_Ty>>)"
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(236): message :         with
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(236): message :         [
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(236): message :             _Ty=std::string
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(236): message :         ]
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(32): message :  выполняется компиляция ссылки на экземпляр шаблон функции "void Lessontime<int>::set_name(std::vector<std::string,std::allocator<_Ty>>)"
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(32): message :         with
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(32): message :         [
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(32): message :             _Ty=std::string
+C:\Users\Асус\source\repos\задание 1\задание 1\Source.cpp(32): message :         ]
+C:\Users\Асус\source\repos\задание 1\задание 1\Header.h(244,26): warning C4101:  a: неиспользованная локальная переменная
+  задание 1.vcxproj -> C:\Users\Асус\source\repos\задание 1\Debug\задание 1.exe
