@@ -45,7 +45,7 @@ Game::Player Game::GetWinner() const
 
 void Game::Start()
 {
-	RenderWindow window(VideoMode(570, 450), "Checkers");
+	RenderWindow window(VideoMode(570, 450), "Simple checkers");
 	int num;
 	num = menu(window);
 	
@@ -134,7 +134,7 @@ void Game::Start2(RenderWindow& window)
 			
 		}
 		// Отрисовка окна
-		window.clear();
+		window.clear(Color(160, 10, 17));
 		mboard.drawboard();
 		mboard.drawcells();
 		mboard.drawOnWindow2(window);
@@ -153,6 +153,124 @@ void Game::Start2(RenderWindow& window)
 
 void Game::Startbot(RenderWindow& window)
 {
+	mboard.ResetMap();
+
+	bool isMousefirstpressed = false;
+	bool isMousefollpressed = false;
+	pos startMousepos;
+	pos endMousepos1, endMousepos2;
+	std::vector<pos> moves;
+	Board::MoveResult moveResult(Board::MoveResult::PROHIBITED);
+	while (window.isOpen())
+	{
+		Event event;
+		while (window.pollEvent(event))
+		{
+			// Пользователь нажал на «крестик» и хочет закрыть окно?
+			if (event.type == Event::Closed)
+				// тогда закрываем его
+				window.close();
+			if (mLastPlayer == Player::WHITE)
+			{
+				if (event.type == Event::MouseButtonPressed)
+					if (event.key.code == Mouse::Left)
+					{
+
+						if (isMousefirstpressed == false)
+						{
+							startMousepos = getNumberofcell(Mouse::getPosition(window) - Vector2i(indent, indent));
+							mboard.GetMap().at(startMousepos).changeColor(Color(0, 150, 150));
+							moves.push_back(startMousepos);
+							isMousefirstpressed = true;
+						}
+						else if (isMousefollpressed == false)//2click
+						{
+							endMousepos1 = getNumberofcell(Mouse::getPosition(window) - Vector2i(indent, indent));
+							isMousefollpressed = true;
+						}
+						else
+						{					//if (isMousefirstpressed == true && isMousefollpressed == true)//3 click
+							endMousepos2 = getNumberofcell(Mouse::getPosition(window) - Vector2i(indent, indent));
+							moves.push_back(endMousepos2);
+							if (endMousepos1 == endMousepos2)
+							{
+								mboard.GetMap().at(startMousepos).changeColor(Color(255, 255, 255));
+								bool direction = GetDirection();
+								for (int i = 1; i < moves.size(); i++)
+								{
+									//moveResult = mboard.CheckMove(moves[i], moves[i + 1], direction);
+									moveResult = mboard.MakeMove(moves.at(i - 1), moves.at(i), direction);
+									std::cout << moves.at(i - 1).first << "p" << moves.at(i - 1).second << std::endl;
+									std::cout << moves.at(i).first << "p" << moves.at(i).second << std::endl;
+									if (moveResult == Board::MoveResult::SUCCESSFUL_COMBAT)
+									{
+										UpdateScore();
+									}
+								}
+								if (moveResult != Board::MoveResult::PROHIBITED)
+								{
+									//if (mLastPlayer == Game::Player::BLACK) std::cout << "yes\n";
+									SwitchPlayer();
+									//if (mLastPlayer == Game::Player::BLACK) std::cout << "yes\n";
+								}
+
+								moves.clear();
+
+								isMousefirstpressed = false;
+								isMousefollpressed = false;
+							}
+							else
+							{
+								endMousepos1 = endMousepos2;
+							}
+
+						}
+					}
+
+			}
+		
+			else
+			{
+				auto mp = mboard.GetMap();
+				auto ar = tf::transformate_info(mp);
+				auto best_turn = ch_bot::get_the_best_turn(ar, gotg::VALUES_FOR_FIELD::MY_CHECKERS, 2, [](bt::Eaten_checkers chek) -> double {return static_cast<double>(chek.count_of_enemy_cheakers) - static_cast<double>(chek.count_of_my_cheakers); });
+				auto botmoves = tranf(best_turn);
+				std::cout << best_turn << std::endl;
+				bool direction = GetDirection();
+				for (int i = 1; i < botmoves.size(); i++)
+				{
+					//moveResult = mboard.CheckMove(moves[i], moves[i + 1], direction);
+					moveResult = mboard.MakeMove(botmoves.at(i - 1), botmoves.at(i), direction);
+					std::cout << botmoves.at(i - 1).first << "b" << botmoves.at(i - 1).second << std::endl;
+					std::cout << botmoves.at(i).first << "b" << botmoves.at(i).second << std::endl;
+					if (moveResult == Board::MoveResult::SUCCESSFUL_COMBAT)
+					{
+						UpdateScore();
+					}
+				}
+				botmoves.clear();
+				SwitchPlayer();
+				continue;
+			}
+
+
+
+		}
+		// Отрисовка окна
+		window.clear(Color(160, 10, 17));
+		mboard.drawboard();
+		mboard.drawcells();
+		mboard.drawOnWindow2(window);
+		mIO.PrintScore(mWhiteScore, mBlackScore, window);
+		drawCurrentPlayer(window);
+		if (GetWinner() != Player::NONE)
+		{
+			EndGame(GetWinner(), window);
+		}
+		window.display();
+
+	}
+
 }
 
 std::pair<size_t, size_t> Game::getNumberofcell(Vector2i a)
@@ -164,17 +282,34 @@ std::pair<size_t, size_t> Game::getNumberofcell(Vector2i a)
 }
 
 
+std::vector<pos> Game::tranf(turn::Turn tr)
+{
+	std::vector<pos> result;
+	pos a(11, 52);
+	for (auto& t : tr.get_full_turn())
+	{
+		a.first = t.get_from().y;
+		a.second = t.get_from().x;
+		result.push_back(a);
+	}
+	a.first = tr.get_full_turn().back().get_to().y;
+	a.second = tr.get_full_turn().back().get_to().x;
+	result.push_back(a);
+	return result;
+}
+
 int Game::menu(RenderWindow& window)
 {
-	Texture menuTexture2, menuTexturecoomp, menuTexturerul, menuTexturepro, menuTextureexit, aboutTexture, menuBackground;
-	menuTexture2.loadFromFile("D:\\graphics\\image-23.png");
-	menuTexturecoomp.loadFromFile("D:\\graphics\\image-22.png");
-	menuTexturerul.loadFromFile("D:\\graphics\\image-24.png");
-	menuTexturepro.loadFromFile("D:\\graphics\\image-27.png");
-	menuTextureexit.loadFromFile("D:\\graphics\\image-26.png");
-	aboutTexture.loadFromFile("D:\\graphics\\new\\about.png");
-	menuBackground.loadFromFile("D:\\graphics\\cher.jpg");
-	Sprite menu2(menuTexture2), menucommp(menuTexturecoomp), menuril(menuTexturerul), menupro(menuTexturepro), menuexit(menuTextureexit), about(aboutTexture), menuBg(menuBackground);
+	Texture menuTexture2, menuTexturecoomp, menuTexturerul, menuTexturepro, menuTextureexit, proTexture, rulTexture, menuBackground;
+	menuTexture2.loadFromFile("images\\image-23.png");
+	menuTexturecoomp.loadFromFile("images\\image-22.png");
+	menuTexturerul.loadFromFile("images\\image-24.png");
+	menuTexturepro.loadFromFile("images\\image-27.png");
+	menuTextureexit.loadFromFile("images\\image-26.png");
+	proTexture.loadFromFile("images\\abouut.jpg");
+	rulTexture.loadFromFile("images\\ruless.jpg");
+	menuBackground.loadFromFile("images\\cher.jpg");
+	Sprite menu2(menuTexture2), menucommp(menuTexturecoomp), menuril(menuTexturerul), menupro(menuTexturepro), menuexit(menuTextureexit), rul(rulTexture), pro(proTexture), menuBg(menuBackground);
 	bool isMenu = 1;
 	int menuNum = 0;
 	menu2.setPosition(30, 30 + 50);
@@ -204,8 +339,8 @@ int Game::menu(RenderWindow& window)
 		{
 			if (menuNum == 1) isMenu = false;//если нажали первую кнопку, то выходим из меню 
 			if (menuNum == 2) isMenu = false;//если нажали первую кнопку, то выходим из меню 
-			if (menuNum == 3) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
-			if (menuNum == 4) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
+			if (menuNum == 3) { window.draw(rul); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
+			if (menuNum == 4) { window.draw(pro); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
 			if (menuNum == 5) { window.close(); isMenu = false; }
 
 		}
@@ -225,7 +360,7 @@ int Game::menu(RenderWindow& window)
 void Game::drawCurrentPlayer(RenderWindow& window)
 {
 	Font font;//шрифт 
-	font.loadFromFile("D:\\graphics\\CyrilicOld.TTF");//передаем нашему шрифту файл шрифта
+	font.loadFromFile("images\\CyrilicOld.TTF");//передаем нашему шрифту файл шрифта
 	Text text("о", font, 20);//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
 	//text.setStyle(sf::Text::Bold | sf::Text::Underlined);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
 
@@ -246,7 +381,7 @@ void Game::drawCurrentPlayer(RenderWindow& window)
 void Game::EndGame(Player player, RenderWindow& window)
 {
 	Font font;//шрифт 
-	font.loadFromFile("D:\\graphics\\CyrilicOld.ttf");//передаем нашему шрифту файл шрифта
+	font.loadFromFile("images\\CyrilicOld.ttf");//передаем нашему шрифту файл шрифта
 	Text text("", font, 100);//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
 	text.setOutlineColor(Color(255, 0, 0)); //покрасили текст в красный. если убрать эту строку, то по умолчанию он белый
 	text.setStyle(sf::Text::Bold | sf::Text::Underlined);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
@@ -303,10 +438,17 @@ void Game::SwitchPlayer()
 	if (mLastPlayer == Player::WHITE)
 	{
 		mLastPlayer = Player::BLACK;
+		return;
 	}
-	else
+	if (mLastPlayer == Player::BLACK)
 	{
 		mLastPlayer = Player::WHITE;
+		return;
+	}
+	if (mLastPlayer == Player::NONE)
+	{
+		mLastPlayer = Player::WHITE;
+		return;
 	}
 }
 

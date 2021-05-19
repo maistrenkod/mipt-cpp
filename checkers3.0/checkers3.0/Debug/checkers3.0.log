@@ -1,5 +1,13 @@
-﻿  Game.cpp
+﻿  Board.cpp
+c:\users\асус\source\repos\checkers3.0\checkers3.0\board.cpp(119): warning C4244: аргумент: преобразование "size_t" в "float", возможна потеря данных
+  Game.cpp
+c:\users\асус\source\repos\checkers3.0\checkers3.0\turn.h(17): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
+c:\users\асус\source\repos\checkers3.0\checkers3.0\graph_of_the_game.h(35): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
+c:\users\асус\source\repos\checkers3.0\checkers3.0\graph_of_the_game.h(36): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
+c:\users\асус\source\repos\checkers3.0\checkers3.0\graph_of_the_game.h(37): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
+c:\users\асус\source\repos\checkers3.0\checkers3.0\graph_of_the_game.h(40): warning C4290: спецификация исключений C++ игнорируется, кроме случая, когда указывается, что функция не является __declspec(nothrow)
 c:\users\асус\source\repos\checkers3.0\checkers3.0\game.cpp(104): warning C4018: <: несоответствие типов со знаком и без знака
-  Source.cpp
+c:\users\асус\source\repos\checkers3.0\checkers3.0\game.cpp(199): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\асус\source\repos\checkers3.0\checkers3.0\game.cpp(240): warning C4018: <: несоответствие типов со знаком и без знака
   Создание кода...
   checkers3.0.vcxproj -> C:\Users\Асус\source\repos\checkers3.0\Debug\checkers3.0.exe

@@ -11,7 +11,7 @@ Cell::~Cell()
 
 void Cell::draw()
 {
-	mtexture.loadFromFile("D:\\graphics\\allcells1.png");
+	mtexture.loadFromFile("images\\allcells1.png");
 	msprite.setTexture(mtexture);
 	switch (mState)
 	{

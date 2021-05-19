@@ -33,6 +33,21 @@
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Turn.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph_of_the_game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Checkers_bot.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Best_turn.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h">
@@ -47,5 +62,69 @@
     <ClInclude Include="Game.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Turn.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph_of_the_game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Checkers_bot.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Best_turn.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\abouut.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\allcells.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\allcells1.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\black.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\board.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\cells.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\cher.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\image-22.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\image-23.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\image-24.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\image-25.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\image-26.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\image-27.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="images\ruless.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="images\CyrilicOld.TTF">
+      <Filter>Файлы ресурсов</Filter>
+    </Font>
   </ItemGroup>
 </Project>

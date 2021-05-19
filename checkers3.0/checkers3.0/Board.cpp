@@ -103,7 +103,7 @@ Board::MoveResult Board::MakeMove(const pos& startPos, const pos& endPos, bool d
 
 void Board::drawboard()
 {
-	mboardtexture.loadFromFile("D:\\graphics\\board.jpg");
+	mboardtexture.loadFromFile("images\\board.jpg");
 	mboardsprite.setTexture(mboardtexture);
 
 }

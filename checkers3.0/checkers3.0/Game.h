@@ -1,6 +1,9 @@
 #pragma once
 #include "Board.h"
 #include "IO.h"
+#include "Checkers_bot.h"
+#include "Transformer.h"
+#include <functional>
 
 using movePos = std::pair<pos, pos>;
 
@@ -15,6 +18,7 @@ public:
 	void Start();
 	static std::pair<size_t, size_t> getNumberofcell(Vector2i a);
 private:
+	std::vector<pos> tranf(turn::Turn tr);
 	int menu(RenderWindow& window);
 	void drawCurrentPlayer(RenderWindow& window);
 	void EndGame(Player player, RenderWindow& window);

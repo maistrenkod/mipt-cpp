@@ -142,17 +142,46 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Best_turn.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="Checkers_bot.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Graph_of_the_game.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Transformer.cpp" />
+    <ClCompile Include="Turn.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Best_turn.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="Checkers_bot.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Graph_of_the_game.h" />
     <ClInclude Include="IO.h" />
+    <ClInclude Include="Transformer.h" />
+    <ClInclude Include="Turn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\abouut.jpg" />
+    <Image Include="images\allcells.png" />
+    <Image Include="images\allcells1.png" />
+    <Image Include="images\black.jpg" />
+    <Image Include="images\board.jpg" />
+    <Image Include="images\cells.png" />
+    <Image Include="images\cher.jpg" />
+    <Image Include="images\image-22.png" />
+    <Image Include="images\image-23.png" />
+    <Image Include="images\image-24.png" />
+    <Image Include="images\image-25.png" />
+    <Image Include="images\image-26.png" />
+    <Image Include="images\image-27.png" />
+    <Image Include="images\ruless.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="images\CyrilicOld.TTF" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
